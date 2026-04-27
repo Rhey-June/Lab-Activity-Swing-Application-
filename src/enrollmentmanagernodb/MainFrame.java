@@ -57,6 +57,7 @@ public class MainFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Student Enrollment Manager");
         setBackground(new java.awt.Color(102, 153, 255));
+        setMaximumSize(new java.awt.Dimension(761, 430));
         setMinimumSize(new java.awt.Dimension(761, 430));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
@@ -67,56 +68,59 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(240, 242, 245));
 
-        jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(50, 50, 50));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jhonrhey\\Downloads\\students.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jhonrhey\\Downloads\\student (1).png")); // NOI18N
         jLabel1.setText("List of Enrolled Students");
         jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Add Student", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe Print", 1, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(210, 210, 210)), "Add Student", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
         jPanel2.setForeground(new java.awt.Color(0, 0, 0));
         jPanel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jPanel2.setOpaque(false);
 
-        jLabel2.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(80, 80, 80));
         jLabel2.setText("Name:");
 
-        tfName.setBackground(new java.awt.Color(255, 255, 255));
-        tfName.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
+        tfName.setBackground(new java.awt.Color(245, 246, 250));
+        tfName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(200, 200, 200)));
         tfName.addActionListener(this::tfNameActionPerformed);
 
-        jLabel3.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(80, 80, 80));
         jLabel3.setText("Email:");
 
-        jLabel4.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(80, 80, 80));
         jLabel4.setText("Course:");
 
         tfCourse.setBackground(new java.awt.Color(255, 255, 255));
-        tfCourse.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
+        tfCourse.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(200, 200, 200)));
         tfCourse.addActionListener(this::tfCourseActionPerformed);
 
         tfEmail.setBackground(new java.awt.Color(255, 255, 255));
-        tfEmail.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
+        tfEmail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(200, 200, 200)));
 
-        btnAdd.setBackground(new java.awt.Color(51, 255, 51));
-        btnAdd.setFont(new java.awt.Font("Segoe Print", 1, 12)); // NOI18N
-        btnAdd.setForeground(new java.awt.Color(0, 0, 0));
-        btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/enrollmentmanagernodb/add.png"))); // NOI18N
+        btnAdd.setBackground(new java.awt.Color(67, 97, 238));
+        btnAdd.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnAdd.setForeground(new java.awt.Color(255, 255, 255));
+        btnAdd.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jhonrhey\\Downloads\\add-ise.png")); // NOI18N
         btnAdd.setText("Add");
+        btnAdd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAdd.addActionListener(this::btnAddActionPerformed);
 
-        btnClear.setBackground(new java.awt.Color(255, 102, 102));
+        btnClear.setBackground(new java.awt.Color(240, 242, 245));
         btnClear.setFont(new java.awt.Font("Segoe Print", 1, 12)); // NOI18N
-        btnClear.setForeground(new java.awt.Color(0, 0, 0));
+        btnClear.setForeground(new java.awt.Color(80, 80, 80));
         btnClear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/enrollmentmanagernodb/eraser (1).png"))); // NOI18N
         btnClear.setText("Clear");
+        btnClear.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(200, 200, 200)));
+        btnClear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnClear.addActionListener(this::btnClearActionPerformed);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -132,27 +136,24 @@ public class MainFrame extends javax.swing.JFrame {
                         .addGap(12, 12, 12)
                         .addComponent(tfName))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(tfEmail))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                                .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(9, 9, 9))))
+                        .addGap(12, 12, 12)
+                        .addComponent(tfEmail))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                        .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(9, 9, 9))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(tfCourse))
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -174,19 +175,23 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdd)
                     .addComponent(btnClear))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
-        btnDelete.setBackground(new java.awt.Color(255, 102, 102));
-        btnDelete.setFont(new java.awt.Font("Segoe Print", 1, 12)); // NOI18N
-        btnDelete.setForeground(new java.awt.Color(0, 0, 0));
+        btnDelete.setBackground(new java.awt.Color(239, 68, 68));
+        btnDelete.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/enrollmentmanagernodb/delete.png"))); // NOI18N
         btnDelete.setText("Delete");
+        btnDelete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(200, 40, 40)));
+        btnDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDelete.addActionListener(this::btnDeleteActionPerformed);
 
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(210, 210, 210)));
+
         tableStudents.setBackground(new java.awt.Color(255, 255, 255));
-        tableStudents.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        tableStudents.setForeground(new java.awt.Color(0, 0, 0));
+        tableStudents.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tableStudents.setForeground(new java.awt.Color(50, 50, 50));
         tableStudents.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -198,9 +203,10 @@ public class MainFrame extends javax.swing.JFrame {
                 "Student ID", "Name", "Course", "Email"
             }
         ));
-        tableStudents.setGridColor(new java.awt.Color(255, 255, 255));
-        tableStudents.setSelectionBackground(new java.awt.Color(255, 255, 255));
-        tableStudents.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        tableStudents.setGridColor(new java.awt.Color(230, 230, 230));
+        tableStudents.setSelectionBackground(new java.awt.Color(219, 225, 255));
+        tableStudents.setSelectionForeground(new java.awt.Color(30, 30, 30));
+        tableStudents.setShowHorizontalLines(true);
         jScrollPane1.setViewportView(tableStudents);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -212,29 +218,30 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(btnDelete)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDelete)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 33, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnDelete)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(41, 41, 41))
         );
 
