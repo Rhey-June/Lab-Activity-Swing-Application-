@@ -20,7 +20,7 @@ import java.time.format.DateTimeFormatter;
     
     private final StudentDBRepository repository = new StudentDBRepository();
     
-    private       int                 nextId     = 1;
+    private int nextId = 1;
 
     public MainFrame() {
         initComponents();
@@ -177,6 +177,7 @@ import java.time.format.DateTimeFormatter;
         btnReload.addActionListener(this::btnReloadActionPerformed);
 
         btnSave.setBackground(new java.awt.Color(124, 58, 237));
+        btnSave.setForeground(new java.awt.Color(255, 255, 255));
         btnSave.setText("Save to Database");
         btnSave.addActionListener(this::btnSaveActionPerformed);
 
@@ -389,30 +390,30 @@ import java.time.format.DateTimeFormatter;
     
     private void deleteSelected() {
             int viewRow = tableStudents.getSelectedRow();
-    System.out.println("Selected row: " + viewRow);  // ← ADD
-    if (viewRow < 0) {
-        JOptionPane.showMessageDialog(this,
+            System.out.println("Selected row: " + viewRow);
+        if (viewRow < 0) {
+            JOptionPane.showMessageDialog(this,
                 "Please select a student row to delete.",
                 "No Selection",
                 JOptionPane.WARNING_MESSAGE);
         return;
     }
 
-    int confirm = JOptionPane.showConfirmDialog(this,
+        int confirm = JOptionPane.showConfirmDialog(this,
             "Are you sure you want to delete the selected student?",
             "Confirm Delete",
             JOptionPane.YES_NO_OPTION);
-    if (confirm != JOptionPane.YES_OPTION) return;
+        if (confirm != JOptionPane.YES_OPTION) return;
 
-    int modelRow = tableStudents.convertRowIndexToModel(viewRow);
-    Student s = students.get(modelRow);
-    System.out.println("Deleting student ID: " + s.getId());  // ← ADD
+        int modelRow = tableStudents.convertRowIndexToModel(viewRow);
+        Student s = students.get(modelRow);
+        System.out.println("Deleting student ID: " + s.getId());  
 
-    repository.delete(s.getId());
-    students.remove(modelRow);
-    refreshTableFromList();
+        repository.delete(s.getId());
+        students.remove(modelRow);
+        refreshTableFromList();
 
-    JOptionPane.showMessageDialog(this,
+        JOptionPane.showMessageDialog(this,
             "Student deleted successfully.",
             "Deleted",
             JOptionPane.INFORMATION_MESSAGE);
@@ -425,8 +426,8 @@ import java.time.format.DateTimeFormatter;
         btnAdd.addActionListener(e -> addStudent());
     }
 
-    private void updateSelected() {
-        int viewRow = tableStudents.getSelectedRow();
+private void updateSelected() {
+    int viewRow = tableStudents.getSelectedRow();
     if (viewRow < 0) {
         JOptionPane.showMessageDialog(this,
                 "Please select a student row to update.",
@@ -438,28 +439,35 @@ import java.time.format.DateTimeFormatter;
     int modelRow = tableStudents.convertRowIndexToModel(viewRow);
     Student s = students.get(modelRow);
 
-    tfName.setText(s.getName());
-    tfEmail.setText(s.getEmail());
+    javax.swing.JTextField nameEdit   = new javax.swing.JTextField(s.getName());
+    javax.swing.JTextField emailEdit  = new javax.swing.JTextField(s.getEmail());
 
+    javax.swing.JComboBox<String> courseEdit = new javax.swing.JComboBox<>(jcbCourse.getModel());
     String targetCourse = s.getCourse().trim();
-    javax.swing.ComboBoxModel<String> cbModel = jcbCourse.getModel();
-    for (int i = 0; i < cbModel.getSize(); i++) {
-        if (cbModel.getElementAt(i).trim().equals(targetCourse)) {
-            jcbCourse.setSelectedIndex(i);
+    for (int i = 0; i < courseEdit.getModel().getSize(); i++) {
+        if (courseEdit.getModel().getElementAt(i).trim().equals(targetCourse)) {
+            courseEdit.setSelectedIndex(i);
             break;
         }
     }
 
-    // ✅ Remove FIRST, then set text, then add new listener
-    for (java.awt.event.ActionListener al : btnAdd.getActionListeners()) {
-        btnAdd.removeActionListener(al);
-    }
-    btnAdd.setText("Confirm Update");
+    javax.swing.JPanel panel = new javax.swing.JPanel(new java.awt.GridLayout(0, 1, 5, 5));
+    panel.add(new javax.swing.JLabel("Name:"));
+    panel.add(nameEdit);
+    panel.add(new javax.swing.JLabel("Course:"));
+    panel.add(courseEdit);
+    panel.add(new javax.swing.JLabel("Email:"));
+    panel.add(emailEdit);
 
-    btnAdd.addActionListener(e -> {
-        String newName   = tfName.getText().trim();
-        String newCourse = (String) jcbCourse.getSelectedItem();
-        String newEmail  = tfEmail.getText().trim();
+    int result = JOptionPane.showConfirmDialog(
+            this, panel, "Edit Student",
+            JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE
+    );
+
+    if (result == JOptionPane.OK_OPTION) {
+        String newName   = nameEdit.getText().trim();
+        String newCourse = (String) courseEdit.getSelectedItem();
+        String newEmail  = emailEdit.getText().trim();
 
         if (!validateInput(newName, newCourse, newEmail)) return;
 
@@ -475,18 +483,13 @@ import java.time.format.DateTimeFormatter;
         }
 
         refreshTableFromList();
-        clearFields();
-        restoreAddButton();
-        showCard("list");
 
         JOptionPane.showMessageDialog(this,
                 "Student updated successfully.",
                 "Updated",
                 JOptionPane.INFORMATION_MESSAGE);
-    });
-
-    showCard("add");
     }
+}
  
     private void loadFromDB() {
         try {

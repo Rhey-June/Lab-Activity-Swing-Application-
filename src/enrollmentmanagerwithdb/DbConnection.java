@@ -12,7 +12,7 @@ public class DbConnection {
     public static Connection getConnection() throws SQLException {
         System.out.println("getConnection() called");
         return DriverManager.getConnection(DB_URL);
-    }
+    }   
 
     private static void initDatabase() {
         System.out.println("initDatabase() called");
