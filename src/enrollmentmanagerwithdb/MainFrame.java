@@ -488,16 +488,6 @@ import java.time.format.DateTimeFormatter;
     showCard("add");
     }
  
- 
-    private void loadFromCSV() {
-        try {
-            List<Student> loaded = repository.loadAll();
-            students.clear();
-            students.addAll(loaded);
-        } catch (Exception ex) {
-            logger.warning("Could not load CSV: " + ex.getMessage());
-        }
-    }
     private void loadFromDB() {
         try {
             List<Student> loaded = repository.loadAll();
